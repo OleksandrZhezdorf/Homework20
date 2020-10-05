@@ -20,14 +20,14 @@ const server = http.createServer((request, response) => {
       write("messages", newData);
       break;
 
-      case "/delete":
+    case "/delete":
 
-        const messages2 = read("messages");
-        const newData2 = [
-          ...messages2.slice(0, messages2.length - 1),
-        ];
+      const messages2 = read("messages");
+      const deleteData = [
+        ...messages2.slice(0, messages2.length - 1),
+      ];
 
-      write("messages", newData2);
+      write("messages", deleteData);
       break;
   }
 
